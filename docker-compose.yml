@@ -1,0 +1,50 @@
+version: '3.4'
+
+services:
+  allergy_service:
+    image: ${DOCKER_REGISTRY-}allergyservice
+    build:
+      context: .
+      dockerfile: Allergy_service/Dockerfile
+
+  appointment_service:
+    image: ${DOCKER_REGISTRY-}appointmentservice
+    build:
+      context: .
+      dockerfile: Appointment_service/Dockerfile
+
+
+  doctor_service:
+    image: ${DOCKER_REGISTRY-}doctorservice
+    build:
+      context: .
+      dockerfile: Doctor_service/Dockerfile
+
+
+  email_service:
+    image: ${DOCKER_REGISTRY-}emailservice
+    build:
+      context: .
+      dockerfile: Email_Service/Dockerfile
+
+
+  gatewayapi:
+    image: ${DOCKER_REGISTRY-}gatewayapi
+    build:
+      context: .
+      dockerfile: GatewayApi/Dockerfile
+
+
+  patient_services:
+    image: ${DOCKER_REGISTRY-}patientservices
+    build:
+      context: .
+      dockerfile: Patient_Services/Dockerfile
+
+
+  physicianavailability_service:
+    image: ${DOCKER_REGISTRY-}physicianavailabilityservice
+    build:
+      context: .
+      dockerfile: PhysicianAvailability_Service/Dockerfile
+

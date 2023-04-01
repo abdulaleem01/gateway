@@ -1,0 +1,494 @@
+{
+    "Routes": [
+        // patient info
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Add_Patient",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Patient/Add_Patient",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Update_Patient/{id}",
+            "UpstreamHttpMethod": [ "PUT" ],
+            "DownstreamPathTemplate": "/api/Patient/Update_Patient/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/get_all_pat",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Patient/Get_all_Patient",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Get_by_ID/{id}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Patient/Get_by_ID/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/PatientExist/{email}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Patient/PatientExist/{email}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/patient_login/{email}/{password}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Patient/patientLogin/{email}/{password}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+
+        // prescription
+        {
+            "UpstreamPathTemplate": "/poseidonhc/AddPrescription",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Prescription/AddPrescription",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/GetPrescriptionById/{id}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Prescription/GetPrescriptionById/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+
+        // visit details
+        {
+            "UpstreamPathTemplate": "/poseidonhc/AddVisitDetails",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/VisitDetails/AddVisitDetails",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/GetVisitDetailsById/{id}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/VisitDetails/GetVisitDetailsById/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/GetVisitDetailsByAcceptanceId/{id}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/VisitDetails/GetVisitDetailsByAcceptanceId/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+
+        // test
+        {
+            "UpstreamPathTemplate": "/poseidonhc/AddTest",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Test/AddTest",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/GetTestListbyid/{visitId}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Test/GetTestListbyid/{visitId}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/GetTestIdbyname/{name}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Test/GetTestIdbyname/{name}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/UpdateTest/{id}",
+            "UpstreamHttpMethod": [ "PUT" ],
+            "DownstreamPathTemplate": "/api/Test/UpdateTest/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/DeleteTest/{id}",
+            "UpstreamHttpMethod": [ "DELETE" ],
+            "DownstreamPathTemplate": "/api/Test/DeleteTest/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "patient_services",
+                    "Port": 80
+                }
+            ]
+        },
+
+        // doctor
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Get_all_doc",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Doctor/getAll",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "doctor_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Get_particular_doctor/{email}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Doctor/particular/{email}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "doctor_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Add_Doctor",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Doctor/Add",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "doctor_service",
+                    "Port": 80
+                }
+            ]
+        },
+
+        // doctor availability
+        {
+            "UpstreamPathTemplate": "/poseidonhc/particular_doc_avail/{email}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/DoctorAvailblity/particular/{email}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "doctor_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/getdocbyStatus/{status}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/DoctorAvailblity/getdocbyStatus/{status}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "doctor_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/add_doc_avail",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/DoctorAvailblity/Add",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "doctor_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Update_doc_avail/{email}",
+            "UpstreamHttpMethod": [ "PUT" ],
+            "DownstreamPathTemplate": "/api/DoctorAvailblity/Update/{email}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "doctor_service",
+                    "Port": 80
+                }
+            ]
+        },
+
+        // email
+        {
+            "UpstreamPathTemplate": "/poseidonhc/sendEmail/{email}/{status}",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/EmailSender/sendEmail/{email}/{status}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "email_service",
+                    "Port": 80
+                }
+            ]
+        },
+
+        // appointment
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Get_all_appointment",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Appointment/Get_all_appointment",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "appointment_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Add_appointment",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Appointment/Add_appointment",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "appointment_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/GetbyAcceptance/{Acceptance}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Appointment/GetbyAcceptance/{Acceptance}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "appointment_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/GetbyPatientID/{patientid}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Appointment/GetbyPatientID/{patientid}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "appointment_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/updateby_patID/{PatientId}",
+            "UpstreamHttpMethod": [ "PUT" ],
+            "DownstreamPathTemplate": "/api/Appointment/updateby_patID/{PatientId}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "appointment_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/AcceptanceAndEmail/{AcceptanceNo}/{Email}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Appointment/AcceptanceAndEmail/{AcceptanceNo}/{Email}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "appointment_service",
+                    "Port": 80
+                }
+            ]
+        },
+
+        {
+            "UpstreamPathTemplate": "/poseidonhc/updatebyAppointMentNo/{AppointmentID}/{AcceptanceNo}",
+            "UpstreamHttpMethod": [ "PUT" ],
+            "DownstreamPathTemplate": "/api/Appointment/updatebyAppointMentNo/{AppointmentID}/{AcceptanceNo}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "appointment_service",
+                    "Port": 80
+                }
+            ]
+        },
+
+        {
+            "UpstreamPathTemplate": "/poseidonhc/GetByDateAcceptanceNoDoctorEmail",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Appointment/GetByDateAcceptanceNoDoctorEmail",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "appointment_service",
+                    "Port": 80
+                }
+            ]
+        },
+
+        // physician availability
+        {
+            "UpstreamPathTemplate": "/poseidonhc/AddPhysicianAvailable",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/PhysicianAvailability/AddPhysicianAvailable",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "physicianavailability_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Get_All_Physicians",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/PhysicianAvailability/Get_All_Physicians",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "physicianavailability_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/FindDoctorByEmailID/{EmailID}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/PhysicianAvailability/FindDoctorByEmailID/{EmailID}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "physicianavailability_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/DeletephysicianAvailability/{EmailID}",
+            "UpstreamHttpMethod": [ "DELETE" ],
+            "DownstreamPathTemplate": "/api/PhysicianAvailability/DeletephysicianAvailability/{EmailID}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "physicianavailability_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/UpdatePhysicianavailability/{Email}",
+            "UpstreamHttpMethod": [ "PUT" ],
+            "DownstreamPathTemplate": "/api/PhysicianAvailability/UpdatePhysicianavailability/{Email}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "physicianavailability_service",
+                    "Port": 80
+                }
+            ]
+        },
+
+        // allergy
+        {
+            "UpstreamPathTemplate": "/poseidonhc/allery/{VisitId}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Allergy/Fetch/{VisitId}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "allergy_service",
+                    "Port": 80
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/poseidonhc/Add_Allergy",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Allergy/Add",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "allergy_service",
+                    "Port": 80
+                }
+            ]
+        }
+    ],
+    "GlobalConfiguration": {}
+}
